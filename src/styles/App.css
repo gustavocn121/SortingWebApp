@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0 ;
+    font-family: 'Lato', sans-serif;
+    
+}
+header{
+    padding: 2rem 3rem 0.5rem 3rem;
+    background-color: #1f90d6;
+    color: white;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item{
+    padding: 1rem 1.2rem;
+    font-size: 20px;
+}
+
+.nav-item a:hover{
+    color: white;
+
+}
+
+main{
+    padding: 5rem 3rem 0 3rem;
+}
+.SortingVisualizer{
+    width: 100%;
+    display: block;
+    justify-content: center;    
+
+}
+.arrayList{
+    width: 100%;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.arrayList li{
+    margin: 0 1rem;
+    
+}
+.arraySlot{
+    width: 3rem;
+    margin-right: 0.3rem;
+}
+.n-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.n-form div{
+    padding: 1rem;
+}
+
+.n-form div .btn{
+    margin-right: 0.3rem;
+}
+
+.buttons-div{
+    display: inline-flex;
+}
