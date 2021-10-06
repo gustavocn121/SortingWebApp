@@ -4,6 +4,7 @@ import SortingVisualizer from './SortingVisualizer';
 import React from "react";
 
 function App() {
+  
   return (
     <div className="App">
       <Header/>
