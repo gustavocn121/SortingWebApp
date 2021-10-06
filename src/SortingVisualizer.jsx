@@ -12,12 +12,12 @@ function SortingVisualizer(props) {
             }
         )
 
-    function imprimeItem(i) {
-        return <li>{i}</li>
+    function imprimeItem(i, index) {
+        return <li key={`arrayNum-${index}`}>{i}</li>
     }
 
-    function imprimeArraySlot(i) {
-        return<input className="arraySlot" type="number"></input>
+    function imprimeArraySlot(i, index) {
+        return<input key={`input-${index}`} className="arraySlot" type="number"></input>
     }
     
     function range(size, startAt = 0) {
@@ -30,8 +30,9 @@ function SortingVisualizer(props) {
         var i=0;
         var stepsArray=[];
         var steps = 0;
-        var array = ArrayObject.numbersArrays;
-        var ult = array.length;
+        var initArray = ArrayObject.numbersArray; 
+        var array = ArrayObject.numbersArray;
+        var ult = ArrayObject.numbersArray.length;
         var num_trocas=0;
 
         for (i = 0; i < array.length; i++) {
@@ -57,7 +58,7 @@ function SortingVisualizer(props) {
 
         var obj =
         {
-            'numbersArray': ArrayObject.numbersArray,
+            'numbersArray': initArray,
             'stepsArray': stepsArray,
             'ordered':[true, {'algorithm': 'BubbleSort', 'orderedArray': array, 'steps': steps}]
         }
@@ -95,7 +96,7 @@ function SortingVisualizer(props) {
         <div className="n-form">
             <p>Numero de items: {n}</p>
             <div>
-                {range(n).map(imprimeArraySlot)}
+                {range(n).map((i, index)=>imprimeArraySlot(i,index))}
             </div>
            <div className="buttons-div"> 
                 <div>
@@ -110,9 +111,12 @@ function SortingVisualizer(props) {
         <div className="sort-btns">
             <button onClick={() => {var l =BubbleSort();setArrayObject(l);}} className="btn">BubbleSort</button>
         </div>
-        <ul className="arrayList d-inline-flex">
-            Array = [{ArrayObject.numbersArray.map(imprimeItem)}]
-        </ul>
+        <div className="arrayList">
+            <p>Array = </p>
+            <ul className=" d-inline-flex">
+                [ {ArrayObject.numbersArray.map((i,index)=>imprimeItem(i,index))} ]
+            </ul>
+        </div>
 
         <div className="output col-12">
 
